@@ -1,0 +1,44 @@
+syntax = "proto3";
+//import "google/protobuf/timestamp.proto";
+
+package printservice;
+
+//service PrintQueueService {
+//    rpc PrintQueueCommunicate(stream PrintQueue) returns (stream PrintQueue) {}
+//    rpc GetPrintQueue(PrintQueue) returns (PrintQueue) {}
+//}
+
+service grpcCatService {
+    rpc Chat(stream Text) returns(stream Text) {}
+}
+
+message Text {
+    string text = 1;
+    string sender = 2;
+}
+
+//message PrintQueue {
+//    string qname = 1;
+//    string qdescription = 2;
+//    string qformat = 3;
+//    string technicalUserName = 4;
+//    enum PQStatus {
+//        R = 0;
+//        H = 1;
+//    }
+//    PQStatus qstatus = 5;
+//    google.protobuf.Timestamp createTime = 6;
+//    google.protobuf.Timestamp lastRetrieveTime = 7;
+//    int32 cleanupPrd = 8;
+//    string locationId = 9;
+//    int32 omsType = 10;
+//    bool deletionFlag = 11;
+//    enum LocationType {
+//        PLT = 0;
+//        BLD = 1;
+//        ROO = 2;
+//        GLN = 3;
+//    }
+//    LocationType locationIdType = 12;
+//    string printParams = 13;
+//}
